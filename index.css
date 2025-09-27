@@ -3,19 +3,21 @@
     padding: 0;
     font-family: 'Poppins', sans-serif;
     box-sizing: border-box;
+    user-select: none;
 }
 .container{
     width: 100%;
     height: 100vh;
-    background: #e3f9ff;
+    /* background: #e3f9ff; */
     display: flex;
     align-items: center;
     justify-content: center;
 }
 .calculator{
-    background-color: #3a4452;
+    background-color: rgba(194, 190, 190, 0.479);
     padding: 20px;
     border-radius: 25px;
+    box-shadow: 0px 2px 5px rgb(117, 117, 126);
 }
 .calculator form input{
     border: 0px solid;
@@ -23,22 +25,22 @@
     width: 60px;
     height: 60px;
     border-radius: 10px;
-    background: rgba(197, 209, 221, 0.229);
+    background: rgba(43, 10, 6, 0.229);
     font-size: 20px;
-    color: #fff;
+    color: black;
     cursor: pointer;
     margin: 10px;
-    box-shadow: 0px 0px 3px whitesmoke;
+    box-shadow: 0px 0px 3px rgb(77, 71, 71);
     transition: all 0.2 linear;
 }
 .calculator form input:active{
- box-shadow: 0px 0px 1px whitesmoke;
+ box-shadow: 0px 0px 1px rgb(77, 71, 71);
 }
 .display{
     display: flex;
     justify-content: flex-end;
     border-radius: 10px;
-    background-color: rgba(197, 209, 221, 0.229);
+    background-color:rgba(43, 10, 6, 0.229);
     margin: 20px 0;
 }
 form .display input{
@@ -58,30 +60,100 @@ form .button {
 form button.equal{
     height: 145px; 
     grid-row: span 2;
-    background-color: rgb(0, 204, 255);
+    background-color: #f37210;
 }
 button{
      border: 0px solid;
     outline: 0;
     width: 60px;
     height: 60px;
+    color: #080808;
     border-radius: 10px;
-    background: transparent;
     font-size: 35px;
-    color: #fff;
     cursor: pointer;
     margin: 10px;
-    box-shadow: 0px 0px 4px whitesmoke;
-    transition: all 0.2 linear;
+    box-shadow: 0px 0px 4px rgb(77, 71, 71);
+    transition: all 0.1s linear;
 }
 button:active{
  box-shadow: 0px 0px 1px whitesmoke;
 }
 .operator{
-    background-color: rgb(0, 204, 255);
+   background-color:#f37210;
 }
 .button .acde{
-    background: rgba(35, 108, 180, 0.299);
+     background-color:#e98233;
+}
+/* --------------toggle button-------------- */
+body{
+    background:#fff;
+    color:#000;
+    font-family:Arial,sans-serif;
+    transition:.3s
+}
+body.dark-mode{
+    background:#121212;
+    color:#fff;
+}
+.switch{position:relative;
+    display:inline-block;
+    width:60px;height:34px;
+    margin:20px
+}
+.switch input{
+    opacity:0;
+    width:0;
+    height:0
+}
+.slider{
+    position:absolute;
+    cursor:pointer;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    background:#ccc;
+    transition:.4s;
+    border-radius:34px
+}
+.slider:before{
+    content:"";
+    position:absolute;
+    height:26px;
+    width:26px;
+    left:4px;
+    bottom:4px;
+    background:#fff;
+    transition:.4s;
+    border-radius:50%
+}
+input:checked+.slider{
+    background:#2c4d67
+}
+input:checked+.slider:before{
+    transform:translateX(26px)
+}
+/* ---------------- Dark Mode ---------------- */
+body.dark-mode .calculator {
+  background-color: #29292b9a;
+}
+body.dark-mode .calculator button{
+  background-color: rgb(10, 199, 237);
+  color: white;
+}
+body.dark-mode .button input{
+    background-color: rgb(29, 52, 57);
+    color: #fff;
+}
+body.dark-mode .button .acde{
+    background-color: #0e3858;
+}
+body.dark-mode form .display input {
+  background-color: white;
+  color: black;
+}
+body.dark-mode form .display{
+    background-color: rgb(72, 63, 63);
 }
 /* ----------responsive for small screen------------ */
 @media (min-width: 200px) and (max-width: 400px) {
@@ -108,5 +180,4 @@ button:active{
     form button.equal{
     height: 115px; 
     }
-
 }
