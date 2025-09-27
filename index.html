@@ -8,6 +8,10 @@
 </head>
 <body>
     <div class="container">
+        <label class="switch">
+            <input type="checkbox" id="themeToggle">
+            <span class="slider"></span>
+        </label>
         <div class="calculator">
             <form >
                 <div class="display">
@@ -18,17 +22,14 @@
                     <input type="button" class="acde" value="DE" onclick="display.value = display.value.toString().slice(0,-1) ">
                     <button type="button" class="operator" onclick="display.value += '/' ">÷</button>
                     <button type="button" class="operator" onclick="display.value += '*' ">×</button>
-
                     <input type="button" value="7" onclick="display.value +='7' ">
                     <input type="button" value="8" onclick="display.value +='8' ">
                     <input type="button" value="9" onclick="display.value +='9' ">
                     <button type="button" class="operator" onclick="display.value += '-' ">-</button>
-
                     <input type="button" value="4" onclick="display.value +='4' ">
                     <input type="button" value="5" onclick="display.value +='5' ">
                     <input type="button" value="6" onclick="display.value +='6' ">
                     <button type="button" class="operator" onclick="display.value += '+' ">+</button>
-
                     <input type="button" value="1" onclick="display.value +='1' ">
                     <input type="button" value="2" onclick="display.value +='2' ">
                     <input type="button" value="3" onclick="display.value +='3' ">
@@ -42,8 +43,10 @@
             </form>
         </div>
     </div>
+<script>
+    document.getElementById('themeToggle').addEventListener('change',e=>{
+      document.body.classList.toggle('dark-mode',e.target.checked)
+    })
+</script>
 </body>
-
 </html>
-
-
